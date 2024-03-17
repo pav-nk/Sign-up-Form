@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto.ttf') format('ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Norse-Bold';
+  src: url('./fonts/Norse-Bold.otf') format('otf');
+  font-weight: normal;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
