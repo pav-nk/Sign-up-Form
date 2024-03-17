@@ -1,13 +1,18 @@
-@font-face {
-  font-family: 'Roboto';
-  src: url('./fonts/Roboto.ttf') format('ttf');
-  font-weight: normal;
+:root {
+  --color-dark: #171717;
+  --color-gray: #444444;
+  --color-red: #da0037;
+  --color-light: #ededed;
 }
 
 @font-face {
-  font-family: 'Norse-Bold';
-  src: url('./fonts/Norse-Bold.otf') format('otf');
-  font-weight: normal;
+  font-family: Roboto;
+  src: url(./fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: DenkOne;
+  src: url(./fonts/DenkOne-Regular.ttf);
 }
 
 html {
@@ -16,5 +21,61 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Roboto, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: var(--color-light);
+  background: var(--color-dark);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  height: 100vh;
+}
+
+.sidebar {
+  background: url(./images/library-of-congress-unsplash.jpg) 100% 100% / cover
+    no-repeat;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.header {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo {
+  display: block;
+  background: url(./icons/city.svg) 100% / contain no-repeat;
+  width: 7rem;
+  height: 7rem;
+}
+
+.title {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title h1 {
+  font-family: DenkOne, sans-serif;
+  font-size: 7rem;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.link {
+  color: var(--color-light);
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: 0.3s color ease-in-out;
+  &:hover {
+    color: var(--color-red);
+  }
 }
