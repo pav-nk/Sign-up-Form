@@ -3,6 +3,7 @@
   --color-gray: #444444;
   --color-red: #da0037;
   --color-light: #ededed;
+  --color-green: #87a922;
 }
 
 @font-face {
@@ -34,8 +35,7 @@ body {
 }
 
 .sidebar {
-  background: url(./images/library-of-congress-unsplash.jpg) 100% 100% / cover
-    no-repeat;
+  background: url(./images/library-of-congress-unsplash.jpg) 100% 100% / cover no-repeat;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -75,7 +75,93 @@ body {
   text-transform: capitalize;
   text-decoration: none;
   transition: 0.3s color ease-in-out;
+
   &:hover {
     color: var(--color-red);
   }
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-red);
+  color: var(--color-light);
+  font-size: 2rem;
+  transition: 0.3s background-color ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gray);
+  }
+}
+
+.content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.content__description {
+  font-size: 2.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.form__title {
+  font-family: DenkOne, sans-serif;
+  font-size: 5rem;
+  color: var(--color-red);
+}
+
+.layout-2-column {
+  display: flex;
+  gap: 80px;
+  flex-basis: 100%;
+}
+
+.form__fields {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.form__item {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex: 1;
+
+  & input {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid var(--color-gray);
+
+    &:focus {
+      border-color: var(--color-green);
+    }
+
+    &[type='password']:invalid {
+      border-color: var(--color-red);
+    }
+
+    &[type='password']:valid {
+      border-color: var(--color-green);
+    }
+  }
+}
+
+.github {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  background: url(./icons/github.svg) 100% / contain no-repeat;
 }
